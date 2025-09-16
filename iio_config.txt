@@ -1,7 +1,15 @@
 https://wiki.analog.com/resources/eval/user-guides/ad-fmcdaq2-ebz/software/linux/applications/libiio
 https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux
 
-strace -ofoo iio_info
+Rebuild LibIIO
+cd /usr/local/src
+git clone https://github.com/analogdevicesinc/libiio.git
+cd /usr/local/src/libiio/
+git clean -d -f -x
+cmake .
+make
+sudo make install
+
 
 
 file program in directory
@@ -9,3 +17,56 @@ file program in directory
 /usr/bin/iio_info -s
 /usr/lib/x86_64-linux-gnu/libiio.so
 
+build & install
+=========
+README_BUILD.md file in yout directory
+
+running install
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running build
+running build_py
+running install_lib
+creating /usr/lib/python3.10/site-packages
+copying build/lib/iio.py -> /usr/lib/python3.10/site-packages
+byte-compiling /usr/lib/python3.10/site-packages/iio.py to iio.cpython-310.pyc
+running install_egg_info
+running egg_info
+creating pylibiio.egg-info
+writing pylibiio.egg-info/PKG-INFO
+writing dependency_links to pylibiio.egg-info/dependency_links.txt
+writing top-level names to pylibiio.egg-info/top_level.txt
+writing manifest file 'pylibiio.egg-info/SOURCES.txt'
+reading manifest file 'pylibiio.egg-info/SOURCES.txt'
+writing manifest file 'pylibiio.egg-info/SOURCES.txt'
+Copying pylibiio.egg-info to /usr/lib/python3.10/site-packages/pylibiio-0.25-py3.10.egg-info
+running install_scripts
+-- Installing: /usr/sbin/iiod
+-- Set runtime path of "/usr/sbin/iiod" to ""
+
+check serivice start
+=============
+systemctl list-unit-files | grep enabled
+
+create service 
+=========
+vi /etc/systemd/system/iiod.service
+
+[Service]
+ExecStart=/usr/sbin/iiod
+
+save > exit
+
+การใช้งาน service 
+systemctl enable iiod //เปิดใช้งานจะทำงานทุกครั้งเมื่อเปิดเครื่อง
+service disable iiod //หยุดการทำงานเมือรีสตาร์ทเครื่องจะไม่ทำงาน
+systemctl start iiod 
+systemctl stop iiod
+systemctl restart iiod
+systemctl ststus iiod //ดู สถานะการทำงาน
+
+ln -s /etc/init/iiod.conf /etc/iio.d/iiod.conf
+
+test app
+=====
+strace -ofoo iio_info
