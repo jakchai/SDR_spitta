@@ -1,0 +1,33 @@
+Creare SDK kit for petalinux zedboard+fmcomm2
+
+
+cd myproject/sw/zed_fmcomm2/
+petalinux-build --sdk
+mkdir ~/petalinux-sdk
+./zed_fmcomm2/build/tmp/deploy/sdk/petalinux-glibc-x86_64-petalinux-image-minimal-cortexa9t2hf-neon-zynq-generic-7z020-toolchain-2024.1.sh -d ~/petalinux-sdk
+source ~/petalinux-sdk/environment-setup-cortexa9t2hf-neon-xilinx-linux-gnueabi 
+
+cd 
+cd myproject
+git clone https://github.com/analogdevicesinc/iio-fm-radio.git
+cd iio-fm-radio
+$CC -I$SDKTARGETSYSROOT/usr/include -L$SDKTARGETSYSROOT/usr/lib -Wall -Wextra -pedantic -Wstrict-prototypes -liio -lm 
+
+or
+
+export PATH=".:/home/user01/SW/iio-fm-radio:$PATH"
+make
+
+export PATH="/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/include/linux/iio/iio.h:$PATH"
+
+cd ..
+cd tx-fm
+./buildtest.sh tx-fm
+./buildtest.sh tx-fm-zed
+./buildtest.sh tx-fm-zed-preload
+./buildtest.sh tx-fm-zed-preloaded-loop
+cd ..
+scp -r iio-fm-radio analog@192.168.1.88:
+scp -r tx-fm analog@192.168.1.88:ch
+
+

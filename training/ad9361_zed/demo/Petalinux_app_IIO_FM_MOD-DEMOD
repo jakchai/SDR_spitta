@@ -1,0 +1,31 @@
+./audio_setup.sh
+speaker-test -D plughw:ADAU1761,0 -c 2 -r 48000 -t sine
+
+cd iio-fm-radio/
+vim iio_fm_radio_play 
+fixed file as 
+#!/bin/sh
+#iio_fm_radio $1 | aplay -r 48000 -f S16
+
+# For playback on the ADAU1761 on the ZED board
+iio_fm_radio $1 | aplay -D plughw:ADAU1761,0 -c 1 -r 48000 -f S16
+sudo -i
+cd /home/analog
+
+listen to FM
+
+cd iio_fm_radio
+export PATH=.:$PATH
+iio_fm_radio_play 95
+cd ..
+
+Broadcast FM
+cd tx-fm
+./tx-fm-zed-preloaded-loop -f 77000000 -s 1152000 -i out.raw
+
+
+
+
+
+
+

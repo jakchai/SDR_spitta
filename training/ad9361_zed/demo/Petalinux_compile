@@ -1,0 +1,53 @@
+How to compile PetaLinux
+
+***Read https://github.com/analogdevicesinc/meta-adi/tree/main/meta-adi-xilinx
+
+source /tools/petalinux_2024.1/settings.sh
+cd myproject/sw/
+git clone https://github.com/analogdevicesinc/meta-adi.git
+export dts_to_use=zynq-zed-adv7511-ad9361-fmcomms2-3
+petalinux-create project --template zynq -n zed_fmcomm2
+mkdir cache
+mkdir cache/downloads
+mkdir cache/sstate-cache
+cd zed_fmcomm2/
+echo "KERNEL_DTB=\"${dts_to_use}\"" >> project-spec/meta-user/conf/petalinuxbsp.conf
+
+nano project-spec/meta-user/conf/petalinuxbsp.conf
+SSTATE_DIR = "/home/giant/myproject/sw/cache/sstate-cache"
+
+petalinux-config --get-hw-description=/home/giant/myproject/sw/system_top.xsa 
+
+
+***System will allow us to set up, if we miss it so we use command petalinux-config for later set up.
+Add meta-adi-xilinx to "user layer"
+Add file:///home/giant/myproject/sw/mirror/rel-v2024 to pre-mirror
+Update parallel thread
+
+petalinux-config -c kernel
+petalinux-config -c rootfs
+
+cd images/linux/
+petalinux-package --boot --fsbl zynq_fsbl.elf  --fpga system.bit --u-boot --force
+
+
+Uboot for test
+
+fatload mmc 0:1 0x3000000 uImage
+fatload setenv bootargs 'console=ttyPS0,115200 root=/dev/mmcblk0p2 rw rootwait earlyprintk'mmc 0:1 0x2A00000 system.dtb
+bootm 0x3000000 - 0x2A00000
+
+Uboot for automatic boot
+setenv bootargs 'console=ttyPS0,115200 root=/dev/mmcblk0p2 rw rootwait earlyprintk'
+setenv bootcmd 'fatload mmc 0:1 0x3000000 uImage; fatload mmc 0:1 0x2A00000 system.dtb; bootm 0x3000000 - 0x2A00000'
+saveenv
+
+
+
+
+
+
+
+
+
+
