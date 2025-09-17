@@ -63,10 +63,13 @@ service disable iiod //หยุดการทำงานเมือรีส
 systemctl start iiod 
 systemctl stop iiod
 systemctl restart iiod
-systemctl ststus iiod //ดู สถานะการทำงาน
+systemctl status iiod //ดู สถานะการทำงาน
 
 ln -s /etc/init/iiod.conf /etc/iio.d/iiod.conf
+ln -s /usr/local/src/libiio-0.25  /usr/local/sbin/iioradio
+export PATH=.:$PATH
 
 test app
 =====
 strace -ofoo iio_info
+iio_info
