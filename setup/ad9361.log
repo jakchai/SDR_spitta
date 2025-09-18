@@ -1,0 +1,241 @@
+
+user01@AGLab05:~/SW/zed_fmcomm2$ petalinux-build
+[INFO] Building project
+[INFO] Getting Platform info from HW file
+[INFO] Silentconfig project
+[INFO] Silentconfig rootfs
+[INFO] Generating configuration files
+[INFO] Adding user layers
+[INFO] Generating workspace directory
+NOTE: Starting bitbake server...
+NOTE: Started PRServer with DBfile: /home/user01/SW/zed_fmcomm2/build/cache/prserv.sqlite3, Address: 127.0.0.1:39117, PID: 102049
+INFO: Specified workspace already set up, leaving as-is
+[INFO] bitbake petalinux-image-minimal
+NOTE: Started PRServer with DBfile: /home/user01/SW/zed_fmcomm2/build/cache/prserv.sqlite3, Address: 127.0.0.1:45569, PID: 102112
+Loading cache: 100% |########################################################################################################| Time: 0:00:03
+Loaded 6415 entries from dependency cache.
+Parsing recipes: 100% |######################################################################################################| Time: 0:00:05
+Parsing of 4468 .bb files complete (4466 cached, 2 parsed). 6417 targets, 440 skipped, 2 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+WARNING: XSCT has been deprecated. It will still be available for several releases. In the future, it's recommended to start new projects with SDT workflow.
+Initialising tasks: 100% |###################################################################################################| Time: 0:00:28
+Checking sstate mirror object availability: 100% |###########################################################################| Time: 0:00:46
+Sstate summary: Wanted 1230 Local 267 Mirrors 952 Missed 11 Current 2990 (99% match, 99% complete)
+NOTE: Executing Tasks
+ERROR: linux-xlnx-6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0 do_compile: oe_runmake failed
+ERROR: linux-xlnx-6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0 do_compile: ExecutionError('/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.102960', 1, None, None)
+ERROR: Logfile of failure stored in: /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/log.do_compile.102960
+Log data follows:
+| DEBUG: Executing shell function do_compile
+| NOTE: KBUILD_BUILD_TIMESTAMP: Sat Apr 27 05:22:24 UTC 2024
+| NOTE: make -j 4 CC=arm-xilinx-linux-gnueabi-gcc  -mno-thumb-interwork -marm -fuse-ld=bfd -fmacro-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source=/usr/src/debug/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0  -fdebug-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source=/usr/src/debug/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0  -fmacro-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/linux-zynq_generic_7z020-standard-build=/usr/src/debug/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0  -fdebug-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/linux-zynq_generic_7z020-standard-build=/usr/src/debug/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0  -fdebug-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot=  -fmacro-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot=  -fdebug-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native=  -fdebug-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source=/usr/src/kernel -fdebug-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-build-artifacts=/usr/src/kernel LD=arm-xilinx-linux-gnueabi-ld.bfd   HOSTCC=gcc  HOSTCFLAGS=-isystem/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/usr/include -O2 -pipe HOSTLDFLAGS=-L/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/usr/lib                         -L/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/lib                         -Wl,--enable-new-dtags                         -Wl,-rpath-link,/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/usr/lib                         -Wl,-rpath-link,/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/lib                         -Wl,-rpath,/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/usr/lib                         -Wl,-rpath,/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/lib                         -Wl,-O1 -Wl,--allow-shlib-undefined -Wl,--dynamic-linker=/home/user01/SW/zed_fmcomm2/build/tmp/sysroots-uninative/x86_64-linux/lib/ld-linux-x86-64.so.2 HOSTCPP=gcc  -E HOSTCXX=g++  HOSTCXXFLAGS=-isystem/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/usr/include -O2 -pipe PAHOLE=false zImage UIMAGE_LOADADDR=0x200000 UIMAGE_LOADADDR=0x200000
+|   GEN     Makefile
+|   CALL    /home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/scripts/checksyscalls.sh
+| /home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/scripts/checksyscalls.sh: line 273: //arm-xilinx-linux-gnueabi-gcc: No such file or directory
+|   CC      drivers/remoteproc/remoteproc_core.o
+| /home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/drivers/remoteproc/remoteproc_core.c: In function 'rproc_get_by_phandle':
+| /home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/drivers/remoteproc/remoteproc_core.c:2115:33: error: unused variable 'cluster_pdev' [-Werror=unused-variable]
+|  2115 |         struct platform_device *cluster_pdev;
+|       |                                 ^~~~~~~~~~~~
+| cc1: all warnings being treated as errors
+| make[4]: *** [/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/scripts/Makefile.build:243: drivers/remoteproc/remoteproc_core.o] Error 1
+| make[3]: *** [/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/scripts/Makefile.build:480: drivers/remoteproc] Error 2
+| make[2]: *** [/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/scripts/Makefile.build:480: drivers] Error 2
+| make[2]: *** Waiting for unfinished jobs....
+| make[1]: *** [/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/Makefile:1913: .] Error 2
+| make: *** [/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/Makefile:234: __sub-make] Error 2
+| ERROR: oe_runmake failed
+| WARNING: /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.102960:307 exit 1 from 'exit 1'
+| WARNING: Backtrace (BB generated script):
+| 	#1: bbfatal_log, /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.102960, line 307
+| 	#2: die, /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.102960, line 291
+| 	#3: oe_runmake, /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.102960, line 219
+| 	#4: kernel_do_compile, /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.102960, line 203
+| 	#5: do_compile, /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.102960, line 149
+| 	#6: main, /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.102960, line 311
+ERROR: Task (/home/user01/SW/zed_fmcomm2/components/yocto/layers/meta-xilinx/meta-xilinx-core/recipes-kernel/linux/linux-xlnx_2024.1.bb:do_compile) failed with exit code '1'
+NOTE: Tasks Summary: Attempted 5405 tasks of which 5404 didn't need to be rerun and 1 failed.
+
+Summary: 1 task failed:
+  /home/user01/SW/zed_fmcomm2/components/yocto/layers/meta-xilinx/meta-xilinx-core/recipes-kernel/linux/linux-xlnx_2024.1.bb:do_compile
+Summary: There was 1 WARNING message.
+Summary: There were 2 ERROR messages, returning a non-zero exit code.
+[ERROR] Command bitbake petalinux-image-minimal failed
+user01@AGLab05:~/SW/zed_fmcomm2$ vi /home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/scripts/checksyscalls.sh
+user01@AGLab05:~/SW/zed_fmcomm2$ petalinux-build
+[INFO] Building project
+[INFO] Getting Platform info from HW file
+[INFO] Silentconfig project
+[INFO] Silentconfig rootfs
+[INFO] Generating configuration files
+[INFO] Adding user layers
+[INFO] Generating workspace directory
+NOTE: Starting bitbake server...
+NOTE: Started PRServer with DBfile: /home/user01/SW/zed_fmcomm2/build/cache/prserv.sqlite3, Address: 127.0.0.1:41801, PID: 103615
+INFO: Specified workspace already set up, leaving as-is
+[INFO] bitbake petalinux-image-minimal
+NOTE: Started PRServer with DBfile: /home/user01/SW/zed_fmcomm2/build/cache/prserv.sqlite3, Address: 127.0.0.1:43865, PID: 103678
+Loading cache: 100% |########################################################################################################| Time: 0:00:03
+Loaded 6415 entries from dependency cache.
+Parsing recipes: 100% |######################################################################################################| Time: 0:00:05
+Parsing of 4468 .bb files complete (4466 cached, 2 parsed). 6417 targets, 440 skipped, 2 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+WARNING: XSCT has been deprecated. It will still be available for several releases. In the future, it's recommended to start new projects with SDT workflow.
+Initialising tasks: 100% |###################################################################################################| Time: 0:00:24
+Checking sstate mirror object availability: 100% |###########################################################################| Time: 0:00:46
+Sstate summary: Wanted 1230 Local 267 Mirrors 952 Missed 11 Current 2990 (99% match, 99% complete)
+NOTE: Executing Tasks
+ERROR: linux-xlnx-6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0 do_compile: oe_runmake failed
+ERROR: linux-xlnx-6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0 do_compile: ExecutionError('/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.104526', 1, None, None)
+ERROR: Logfile of failure stored in: /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/log.do_compile.104526
+Log data follows:
+| DEBUG: Executing shell function do_compile
+| NOTE: KBUILD_BUILD_TIMESTAMP: Sat Apr 27 05:22:24 UTC 2024
+| NOTE: make -j 4 CC=arm-xilinx-linux-gnueabi-gcc  -mno-thumb-interwork -marm -fuse-ld=bfd -fmacro-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source=/usr/src/debug/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0  -fdebug-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source=/usr/src/debug/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0  -fmacro-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/linux-zynq_generic_7z020-standard-build=/usr/src/debug/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0  -fdebug-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/linux-zynq_generic_7z020-standard-build=/usr/src/debug/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0  -fdebug-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot=  -fmacro-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot=  -fdebug-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native=  -fdebug-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source=/usr/src/kernel -fdebug-prefix-map=/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-build-artifacts=/usr/src/kernel LD=arm-xilinx-linux-gnueabi-ld.bfd   HOSTCC=gcc  HOSTCFLAGS=-isystem/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/usr/include -O2 -pipe HOSTLDFLAGS=-L/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/usr/lib                         -L/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/lib                         -Wl,--enable-new-dtags                         -Wl,-rpath-link,/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/usr/lib                         -Wl,-rpath-link,/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/lib                         -Wl,-rpath,/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/usr/lib                         -Wl,-rpath,/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/lib                         -Wl,-O1 -Wl,--allow-shlib-undefined -Wl,--dynamic-linker=/home/user01/SW/zed_fmcomm2/build/tmp/sysroots-uninative/x86_64-linux/lib/ld-linux-x86-64.so.2 HOSTCPP=gcc  -E HOSTCXX=g++  HOSTCXXFLAGS=-isystem/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/recipe-sysroot-native/usr/include -O2 -pipe PAHOLE=false zImage UIMAGE_LOADADDR=0x200000 UIMAGE_LOADADDR=0x200000
+|   GEN     Makefile
+|   CALL    /home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/scripts/checksyscalls.sh
+| /home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/scripts/checksyscalls.sh: line 273: //arm-xilinx-linux-gnueabi-gcc: No such file or directory
+| make[2]: *** [/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/./Kbuild:44: missing-syscalls] Error 127
+| make[1]: *** [/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/Makefile:1202: prepare0] Error 2
+| make: *** [/home/user01/SW/zed_fmcomm2/build/tmp/work-shared/zynq-generic-7z020/kernel-source/Makefile:234: __sub-make] Error 2
+| ERROR: oe_runmake failed
+| WARNING: /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.104526:307 exit 1 from 'exit 1'
+| WARNING: Backtrace (BB generated script):
+| 	#1: bbfatal_log, /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.104526, line 307
+| 	#2: die, /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.104526, line 291
+| 	#3: oe_runmake, /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.104526, line 219
+| 	#4: kernel_do_compile, /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.104526, line 203
+| 	#5: do_compile, /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.104526, line 149
+| 	#6: main, /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/temp/run.do_compile.104526, line 311
+ERROR: Task (/home/user01/SW/zed_fmcomm2/components/yocto/layers/meta-xilinx/meta-xilinx-core/recipes-kernel/linux/linux-xlnx_2024.1.bb:do_compile) failed with exit code '1'
+NOTE: Tasks Summary: Attempted 4648 tasks of which 4647 didn't need to be rerun and 1 failed.
+
+Summary: 1 task failed:
+  /home/user01/SW/zed_fmcomm2/components/yocto/layers/meta-xilinx/meta-xilinx-core/recipes-kernel/linux/linux-xlnx_2024.1.bb:do_compile
+Summary: There was 1 WARNING message.
+Summary: There were 2 ERROR messages, returning a non-zero exit code.
+[ERROR] Command bitbake petalinux-image-minimal failed
+user01@AGLab05:~/SW/zed_fmcomm2$   petalinux-config -c kernel
+[INFO] Getting Platform info from HW file
+[INFO] Silentconfig project
+[INFO] Silentconfig rootfs
+[INFO] Generating configuration files
+[INFO] Adding user layers
+[INFO] Generating workspace directory
+NOTE: Starting bitbake server...
+NOTE: Started PRServer with DBfile: /home/user01/SW/zed_fmcomm2/build/cache/prserv.sqlite3, Address: 127.0.0.1:34729, PID: 105019
+INFO: Specified workspace already set up, leaving as-is
+[INFO] Configuring: kernel
+[INFO] bitbake virtual/kernel -c cleansstate
+NOTE: Started PRServer with DBfile: /home/user01/SW/zed_fmcomm2/build/cache/prserv.sqlite3, Address: 127.0.0.1:34623, PID: 105082
+Loading cache: 100% |########################################################################################################| Time: 0:00:03
+Loaded 6415 entries from dependency cache.
+Parsing recipes: 100% |######################################################################################################| Time: 0:00:05
+Parsing of 4468 .bb files complete (4466 cached, 2 parsed). 6417 targets, 440 skipped, 2 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+Initialising tasks: 100% |###################################################################################################| Time: 0:00:14
+Sstate summary: Wanted 0 Local 0 Mirrors 0 Missed 0 Current 0 (0% match, 0% complete)
+NOTE: No setscene tasks
+NOTE: Executing Tasks
+NOTE: Tasks Summary: Attempted 3 tasks of which 0 didn't need to be rerun and all succeeded.
+[INFO] bitbake virtual/kernel -c menuconfig
+NOTE: Started PRServer with DBfile: /home/user01/SW/zed_fmcomm2/build/cache/prserv.sqlite3, Address: 127.0.0.1:36927, PID: 106000
+Loading cache: 100% |########################################################################################################| Time: 0:00:03
+Loaded 6415 entries from dependency cache.
+Parsing recipes: 100% |######################################################################################################| Time: 0:00:05
+Parsing of 4468 .bb files complete (4466 cached, 2 parsed). 6417 targets, 440 skipped, 2 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+Initialising tasks: 100% |###################################################################################################| Time: 0:00:16
+Sstate summary: Wanted 69 Local 68 Mirrors 0 Missed 1 Current 68 (98% match, 99% complete)
+NOTE: Executing Tasks
+NOTE: Tasks Summary: Attempted 620 tasks of which 608 didn't need to be rerun and all succeeded.
+[INFO] bitbake virtual/kernel -c diffconfig
+NOTE: Started PRServer with DBfile: /home/user01/SW/zed_fmcomm2/build/cache/prserv.sqlite3, Address: 127.0.0.1:36497, PID: 113098
+Loading cache: 100% |########################################################################################################| Time: 0:00:05
+Loaded 6415 entries from dependency cache.
+Parsing recipes: 100% |######################################################################################################| Time: 0:00:05
+Parsing of 4468 .bb files complete (4466 cached, 2 parsed). 6417 targets, 440 skipped, 2 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+Initialising tasks: 100% |###################################################################################################| Time: 0:00:15
+Sstate summary: Wanted 34 Local 34 Mirrors 0 Missed 0 Current 34 (100% match, 100% complete)
+NOTE: Executing Tasks
+Config fragment has been dumped into:
+ /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/fragment.cfg
+NOTE: Tasks Summary: Attempted 310 tasks of which 309 didn't need to be rerun and all succeeded.
+[INFO] recipetool appendsrcfile -wW /home/user01/SW/zed_fmcomm2/project-spec/meta-user virtual/kernel /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/user_2025-09-17-22-54-00.cfg
+NOTE: Starting bitbake server...
+NOTE: Started PRServer with DBfile: /home/user01/SW/zed_fmcomm2/build/cache/prserv.sqlite3, Address: 127.0.0.1:46021, PID: 114007
+Loading cache: 100% |########################################################################################################| Time: 0:00:03
+Loaded 6415 entries from dependency cache.
+Parsing recipes: 100% |######################################################################################################| Time: 0:00:05
+Parsing of 4468 .bb files complete (4466 cached, 2 parsed). 6417 targets, 440 skipped, 2 masked, 0 errors.
+NOTE: Writing append file /home/user01/SW/zed_fmcomm2/project-spec/meta-user/recipes-kernel/linux/linux-xlnx_%.bbappend
+NOTE: Copying /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/linux-xlnx/6.6.10-xilinx-v2024.1+gitAUTOINC+3af4295e00-r0/user_2025-09-17-22-54-00.cfg to /home/user01/SW/zed_fmcomm2/project-spec/meta-user/recipes-kernel/linux/linux-xlnx/user_2025-09-17-22-54-00.cfg
+[INFO] bitbake virtual/kernel -c cleansstate
+NOTE: Started PRServer with DBfile: /home/user01/SW/zed_fmcomm2/build/cache/prserv.sqlite3, Address: 127.0.0.1:40225, PID: 114076
+Loading cache: 100% |########################################################################################################| Time: 0:00:03
+Loaded 6415 entries from dependency cache.
+Parsing recipes: 100% |######################################################################################################| Time: 0:00:05
+Parsing of 4468 .bb files complete (4463 cached, 5 parsed). 6417 targets, 440 skipped, 2 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+Initialising tasks: 100% |###################################################################################################| Time: 0:00:18
+Sstate summary: Wanted 0 Local 0 Mirrors 0 Missed 0 Current 0 (0% match, 0% complete)
+NOTE: No setscene tasks
+NOTE: Executing Tasks
+NOTE: Tasks Summary: Attempted 3 tasks of which 0 didn't need to be rerun and all succeeded.
+[INFO] Successfully configured kernel
+user01@AGLab05:~/SW/zed_fmcomm2$ petalinux-build
+[INFO] Building project
+[INFO] Getting Platform info from HW file
+[INFO] Silentconfig project
+[INFO] Silentconfig rootfs
+[INFO] Generating configuration files
+[INFO] Adding user layers
+[INFO] Generating workspace directory
+NOTE: Starting bitbake server...
+NOTE: Started PRServer with DBfile: /home/user01/SW/zed_fmcomm2/build/cache/prserv.sqlite3, Address: 127.0.0.1:44999, PID: 115086
+INFO: Specified workspace already set up, leaving as-is
+[INFO] bitbake petalinux-image-minimal
+NOTE: Started PRServer with DBfile: /home/user01/SW/zed_fmcomm2/build/cache/prserv.sqlite3, Address: 127.0.0.1:40147, PID: 115149
+Loading cache: 100% |########################################################################################################| Time: 0:00:03
+Loaded 6415 entries from dependency cache.
+Parsing recipes: 100% |######################################################################################################| Time: 0:00:05
+Parsing of 4468 .bb files complete (4466 cached, 2 parsed). 6417 targets, 440 skipped, 2 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+WARNING: XSCT has been deprecated. It will still be available for several releases. In the future, it's recommended to start new projects with SDT workflow.
+Initialising tasks: 100% |###################################################################################################| Time: 0:00:27
+Checking sstate mirror object availability: 100% |###########################################################################| Time: 0:00:40
+Sstate summary: Wanted 1247 Local 264 Mirrors 952 Missed 31 Current 2973 (97% match, 99% complete)
+Removing 15 stale sstate objects for arch zynq_generic_7z020: 100% |#########################################################| Time: 0:00:00
+NOTE: Executing Tasks
+ERROR: petalinux-image-minimal-1.0-r0 do_image_cpio: ExecutionError('/home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/petalinux-image-minimal/1.0-r0/temp/run.do_image_cpio.196467', 2, None, None)
+ERROR: Logfile of failure stored in: /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/petalinux-image-minimal/1.0-r0/temp/log.do_image_cpio.196467
+Log data follows:
+| DEBUG: Executing python function extend_recipe_sysroot
+| NOTE: Direct dependencies are ['/home/user01/SW/zed_fmcomm2/components/yocto/layers/poky/meta/recipes-core/glibc/cross-localedef-native_2.36.bb:do_populate_sysroot', '/home/user01/SW/zed_fmcomm2/components/yocto/layers/poky/meta/recipes-core/glibc/ldconfig-native_2.12.1.bb:do_populate_sysroot', '/home/user01/SW/zed_fmcomm2/components/yocto/layers/poky/meta/recipes-devtools/qemu/qemuwrapper-cross_1.0.bb:do_populate_sysroot', '/home/user01/SW/zed_fmcomm2/components/yocto/layers/poky/meta/recipes-kernel/kmod/depmodwrapper-cross_1.0.bb:do_populate_sysroot', 'virtual:native:/home/user01/SW/zed_fmcomm2/components/yocto/layers/meta-xilinx/meta-xilinx-core/recipes-bsp/u-boot/u-boot-tools-xlnx_2024.1.bb:do_populate_sysroot', 'virtual:native:/home/user01/SW/zed_fmcomm2/components/yocto/layers/poky/meta/recipes-core/update-rc.d/update-rc.d_0.8.bb:do_populate_sysroot', 'virtual:native:/home/user01/SW/zed_fmcomm2/components/yocto/layers/poky/meta/recipes-devtools/createrepo-c/createrepo-c_0.20.1.bb:do_populate_sysroot', 'virtual:native:/home/user01/SW/zed_fmcomm2/components/yocto/layers/poky/meta/recipes-devtools/dnf/dnf_4.14.0.bb:do_populate_sysroot', 'virtual:native:/home/user01/SW/zed_fmcomm2/components/yocto/layers/poky/meta/recipes-devtools/makedevs/makedevs_1.0.1.bb:do_populate_sysroot', 'virtual:native:/home/user01/SW/zed_fmcomm2/components/yocto/layers/poky/meta/recipes-devtools/opkg-utils/opkg-utils_0.5.0.bb:do_populate_sysroot', 'virtual:native:/home/user01/SW/zed_fmcomm2/components/yocto/layers/poky/meta/recipes-devtools/opkg/opkg_0.6.1.bb:do_populate_sysroot', 'virtual:native:/home/user01/SW/zed_fmcomm2/components/yocto/layers/poky/meta/recipes-devtools/pseudo/pseudo_git.bb:do_populate_sysroot', 'virtual:native:/home/user01/SW/zed_fmcomm2/components/yocto/layers/poky/meta/recipes-devtools/rpm/rpm_4.18.0.bb:do_populate_sysroot', 'virtual:native:/home/user01/SW/zed_fmcomm2/components/yocto/layers/poky/meta/recipes-extended/cpio/cpio_2.13.bb:do_populate_sysroot', 'virtual:native:/home/user01/SW/zed_fmcomm2/components/yocto/layers/poky/meta/recipes-extended/pigz/pigz_2.7.bb:do_populate_sysroot']
+| NOTE: Installed into sysroot: ['cpio-native']
+| NOTE: Skipping as already exists in sysroot: ['cross-localedef-native', 'ldconfig-native', 'qemuwrapper-cross', 'depmodwrapper-cross', 'u-boot-tools-xlnx-native', 'update-rc.d-native', 'createrepo-c-native', 'dnf-native', 'makedevs-native', 'opkg-utils-native', 'opkg-native', 'pseudo-native', 'rpm-native', 'pigz-native', 'systemd-systemctl-native', 'qemu-xilinx-native', 'glib-2.0-native', 'expat-native', 'sqlite3-native', 'curl-native', 'zlib-native', 'file-native', 'python3-native', 'xz-native', 'libxml2-native', 'cmake-native', 'openssl-native', 'shadow-native', 'perl-native', 'kmod-native', 'desktop-file-utils-native', 'libtool-native', 'mkfontscale-native', 'gconf-native', 'python3-setuptools-native', 'gnutls-native', 'dtc-native', 'bc-native', 'swig-native', 'util-linux-native', 'flex-native', 'gdk-pixbuf-native', 'shared-mime-info-native', 'librepo-native', 'gettext-minimal-native', 'libcomps-native', 'libdnf-native', 'python3-iniparse-native', 'gtk+3-native', 'bzip2-native', 'popt-native', 'elfutils-native', 'lua-native', 'libgcrypt-native', 'zstd-native', 'libsolv-native', 'libarchive-native', 'texinfo-dummy-native', 'base-passwd', 'debianutils-native', 'libffi-native', 'gettext-native', 'libpcre-native', 'readline-native', 'gdbm-native', 'util-linux-libuuid-native', 'ncurses-native', 'libtirpc-native', 'libnsl2-native', 'make-native', 'util-macros-native', 'libfontenc-native', 'xorgproto-native', 'freetype-native', 'intltool-native', 'gobject-introspection-native', 'dbus-glib-native', 'dbus-native', 'python3-wheel-native', 'python3-installer-native', 'python3-picobuild-native', 'nettle-native', 'libidn2-native', 'gmp-native', 'libunistring-native', 'libcap-ng-native', 'libpcre2-native', 'm4-native', 'libpng-native', 'libjpeg-turbo-native', 'itstool-native', 'attr-native', 'gpgme-native', 'libcheck-native', 'json-c-native', 'libmodulemd-native', 'python3-six-native', 'libxext-native', 'libx11-native', 'libxrender-native', 'atk-native', 'libxcursor-native', 'libxcomposite-native', 'libxi-native', 'libxdamage-native', 'fontconfig-native', 'libxrandr-native', 'libxfixes-native', 'pango-native', 'cairo-native', 'at-spi2-atk-native', 'libmicrohttpd-native', 'libgpg-error-native', 'libcap-native', 'font-util-native', 'libxml-parser-perl-native', 'python3-flit-core-native', 'gnu-config-native', 'libassuan-native', 'libyaml-native', 'libxcb-native', 'xtrans-native', 'libxft-native', 'harfbuzz-native', 'fribidi-native', 'pixman-native', 'libsm-native', 'at-spi2-core-native', 'unzip-native', 'libxau-native', 'xcb-proto-native', 'libxdmcp-native', 'libpthread-stubs-native', 'icu-native', 'libice-native', 'libxtst-native']
+| DEBUG: Python function extend_recipe_sysroot finished
+| DEBUG: Executing python function set_image_size
+| DEBUG: 9546035.200000 = 7343104 * 1.300000
+| DEBUG: 9648435.200000 = max(9546035.200000, 65536)[9546035.200000] + 102400
+| DEBUG: 9648436.000000 = int(9648435.200000)
+| DEBUG: 9648436 = aligned(9648436)
+| DEBUG: returning 9648436
+| DEBUG: Python function set_image_size finished
+| DEBUG: Executing shell function do_image_cpio
+| 14372354 blocks
+| cpio: cannot seek on output: Invalid argument
+| WARNING: /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/petalinux-image-minimal/1.0-r0/temp/run.do_image_cpio.196467:160 exit 2 from 'ln -sf /sbin/init /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/petalinux-image-minimal/1.0-r0/cpio_append/init'
+| WARNING: Backtrace (BB generated script):
+| 	#1: do_image_cpio, /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/petalinux-image-minimal/1.0-r0/temp/run.do_image_cpio.196467, line 160
+| 	#2: main, /home/user01/SW/zed_fmcomm2/build/tmp/work/zynq_generic_7z020-xilinx-linux-gnueabi/petalinux-image-minimal/1.0-r0/temp/run.do_image_cpio.196467, line 173
+ERROR: Task (/home/user01/SW/zed_fmcomm2/components/yocto/layers/meta-petalinux/recipes-core/images/petalinux-image-minimal.bb:do_image_cpio) failed with exit code '1'
+NOTE: Tasks Summary: Attempted 10359 tasks of which 10267 didn't need to be rerun and 1 failed.
+
+Summary: 1 task failed:
+  /home/user01/SW/zed_fmcomm2/components/yocto/layers/meta-petalinux/recipes-core/images/petalinux-image-minimal.bb:do_image_cpio
+Summary: There was 1 WARNING message.
+Summary: There was 1 ERROR message, returning a non-zero exit code.
+[ERROR] Command bitbake petalinux-image-minimal failed
+
